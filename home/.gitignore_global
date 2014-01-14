@@ -1,0 +1,4 @@
+*~
+.DS_Store
+.homesick/repos/dotfiles/home/.vim/bundle
+.homesick/repos/dotfiles/home/.vim/.netrwhist
