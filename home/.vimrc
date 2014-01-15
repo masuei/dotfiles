@@ -108,4 +108,4 @@ Bundle 'vundle'
 Bundle 'emmet-vim'
 Bundle 'surround.vim'
 Bundle 'unite.vim'
-
+Bundle 'highlightline.vim'
