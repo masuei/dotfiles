@@ -16,6 +16,8 @@ alias ld='gls --color -AFh | grep "/"'
 alias mvim='mvim -p --remote-tab-silent'
 alias psql='psql -U postgres -p 5432'
 alias lab='cd $HOME/Dropbox/Lab/Program'
+alias abaku='defaults write com.apple.finder AppleShowAllFiles -boolean true && killall Finder'
+alias oshinobi='defaults delete com.apple.finder AppleShowAllFiles && killall Finder'
 
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
