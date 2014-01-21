@@ -23,6 +23,18 @@ set nu
 "set t_Co=256
 colorscheme molokai 
 
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+set softtabstop=0
+set title
+set showmatch
+set smartindent
+
+set ignorecase
+set smartcase
+set wrapscan
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -68,7 +80,20 @@ if has("autocmd")
   filetype plugin indent on
 
   " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
+  augroup vimrc
+	autocmd FileType markdown call <SID>markdown_settings()
+	function! s:markdown_settings()
+		setlocal tabstop=4 shiftwidth=4 softtabstop=4
+
+		" previm
+		"let g:previm_open_cmd = 'open -a Opera'
+		"let g:previm_open_cmd = 'open -a Firefox'
+		"let g:previm_open_cmd = 'open -a Safari'
+		let g:previm_open_cmd = 'open -a GoogleChromeDev'
+		nnoremap <buffer> <Space>o :<C-u>PrevimOpen<CR>
+		map <C-j> <Plug>(previm-scroll-down)
+		map <C-k> <Plug>(previm-scroll-up)
+	endfunction
   au!
 
   " For all text files set 'textwidth' to 78 characters.
@@ -100,6 +125,8 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+
+
 "vundle設定（プラグイン一括管理）
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -109,3 +136,30 @@ Bundle 'emmet-vim'
 Bundle 'surround.vim'
 Bundle 'unite.vim'
 Bundle 'highlightline.vim'
+Bundle 'open-browser.vim'
+Bundle 'previm'
+
+augroup Vimrc
+	autocmd FileType markdown call <SID>markdown_settings()
+	function! s:markdown_settings()
+		setlocal tabstop=4 shiftwidth=4 softtabstop=4
+
+		" previm
+		"let g:previm_open_cmd = 'open -a Opera'
+		"let g:previm_open_cmd = 'open -a Firefox'
+		"let g:previm_open_cmd = 'open -a Safari'
+		let g:previm_open_cmd = ''
+		nnoremap <buffer> <Space>o :<C-u>PrevimOpen<CR>
+		map <C-j> <Plug>(previm-scroll-down)
+		map <C-k> <Plug>(previm-scroll-up)
+	endfunction
+augroup END
+
+
+" for open-browser plugin
+ let g:netrw_nogx = 1 " disable netrw's gx mapping.
+ nmap gx <Plug>(openbrowser-smart-search)
+ vmap gx <Plug>(openbrowser-smart-search)
+
+ " md as markdown, instead of modula2
+ autocmd Vimrc BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown

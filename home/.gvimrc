@@ -13,10 +13,10 @@ if has('gui_macvim')
   set columns=100      " 横幅
   set lines=35         " 行数
 
-  set nowrapscan       " 検索をファイルの先頭へループしない
+  set nowrapscan       " 検索をファイルの先頭へルプしない
 
   " フォント設定
-  set guifontwide=Osaka:h12
-  set guifont=Osaka-Mono:h14
+  set guifontwide=Ricty:h12
+  set guifont=Ricty:h14
   
 endif

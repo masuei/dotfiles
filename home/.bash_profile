@@ -18,8 +18,19 @@ alias psql='psql -U postgres -p 5432'
 alias lab='cd $HOME/Dropbox/Lab/Program'
 alias abaku='defaults write com.apple.finder AppleShowAllFiles -boolean true && killall Finder'
 alias oshinobi='defaults delete com.apple.finder AppleShowAllFiles && killall Finder'
+alias opdl='cd SDN/controller/opendaylight/distribution/opendaylight/target/distribution.opendaylight-osgipackage/opendaylight/'
 
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
+export PATH="/usr/lib/jvm/java-7-openjdk/bin:${PATH}"
+export PATH=$PATH:$JAVA_HOME/bin
 export TERM=xterm-256color
+export _JAVA_OPTIONS=-Dfile.encoding=utf-8
 export PS1="\W $ "
+#export LANGUAGE=en_US.UTF-8
+#export LANG=en_US.UTF-8
+#export LC_ALL=en_US.UTF-8
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home/
+#export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/
